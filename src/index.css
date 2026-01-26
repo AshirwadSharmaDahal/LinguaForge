@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#050B14] text-cyan-50 min-h-screen antialiased overflow-x-hidden;
+    font-family: 'Rajdhani', sans-serif;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        linear-gradient(rgba(5, 11, 20, 0.95), rgba(5, 11, 20, 0.95)),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230e7490' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Futuristic Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(6, 182, 212, 0.3);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(6, 182, 212, 0.6);
+  }
+}
+
+@layer components {
+  .font-tech {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  /* Glass Panel - The Core UI Element */
+  .glass-panel {
+    @apply bg-[#0F172A]/60 backdrop-blur-xl border border-cyan-500/20 shadow-[0_0_30px_rgba(6,182,212,0.1)];
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.4) 100%);
+  }
+
+  .glass-panel:hover {
+    @apply border-cyan-500/40 shadow-[0_0_40px_rgba(6,182,212,0.2)];
+  }
+
+  /* Neon Text Utilities */
+  .text-neon-cyan {
+    @apply text-cyan-400 drop-shadow-[0_0_5px_rgba(34,211,238,0.8)];
+  }
+  
+  .text-neon-pink {
+    @apply text-fuchsia-400 drop-shadow-[0_0_5px_rgba(232,121,249,0.8)];
+  }
+
+  /* Buttons */
+  .btn-cyber {
+    @apply font-tech uppercase tracking-widest text-xs py-3 px-6 rounded-sm transition-all duration-300 relative overflow-hidden group;
+    background: transparent;
+    border: 1px solid rgba(6, 182, 212, 0.5);
+    color: #22d3ee;
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.1);
+  }
+
+  .btn-cyber::before {
+    content: '';
+    @apply absolute top-0 left-[-100%] w-full h-full bg-cyan-500/20 transform skew-x-[-20deg] transition-all duration-500;
+  }
+
+  .btn-cyber:hover::before {
+    @apply left-[100%];
+  }
+
+  .btn-cyber:hover {
+    @apply bg-cyan-500/10 border-cyan-400 text-cyan-200 shadow-[0_0_20px_rgba(6,182,212,0.4)];
+  }
+
+  .btn-cyber:active {
+    @apply scale-[0.98];
+  }
+
+  /* Chat Bubbles */
+  .bubble-user {
+    @apply relative bg-gradient-to-r from-cyan-900/40 to-blue-900/40 border-l-2 border-cyan-500 text-cyan-50 rounded-r-lg rounded-bl-lg;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%); /* Slight tech cut */
+  }
+
+  .bubble-bot {
+    @apply relative bg-[#1E293B]/80 border border-slate-700 text-slate-200 rounded-lg;
+  }
+  
+  /* Animations */
+  .animate-scanline {
+    animation: scanline 8s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 0.1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(6, 182, 212, 0.1); }
+    50% { box-shadow: 0 0 25px rgba(6, 182, 212, 0.3); }
+  }
+}
