@@ -92,7 +92,6 @@ To keep you motivated, we've built in a few reward mechanics:
 ### Your Progress Stays With You
 Everything is saved right in your browser using `localStorage`. No sign-up needed, no accounts to manage. Your XP, streaks, completed lessons—it's all there next time you open the app.
 
-<<<<<<< HEAD
 ## 📝 Development
 =======
 ### The AI Tutor: Real Conversation Practice
@@ -103,50 +102,8 @@ The chatbot feature uses Google's Gemini AI to power a conversational tutor. Her
 - **Smart Responses**: If your input is grammatically correct or it's free-form conversation, the AI generates natural responses. If there's an error, you get immediate feedback and correction.
 - **No Sign-Up Required**: Just type and chat. Your API key is configured once, and you're ready to practice anytime.
 
-## Ready to Deploy?
-
-### Putting It on Vercel (Easiest Option)
-
-Vercel makes deployment a breeze—and it's free:
-
-1. Push your code to GitHub
-2. Head over to [vercel.com](https://vercel.com) and sign in with your GitHub account
-3. Click "New Project" and select your LinguaForge repository
-4. Vercel will automatically figure out the settings:
-   - **Build**: `npm run build`
-   - **Output**: `dist`
-   - **Install**: `npm install`
-5. Hit "Deploy" and you're done. Your app will be live in minutes!
-
-### Prefer Firebase? Here's How:
-
-1. Install the Firebase tools:
-```bash
-npm install -g firebase-tools
-```
-
-2. Log in to Firebase:
-```bash
-firebase login
-```
-
-3. Set up Firebase in your project:
-```bash
-firebase init hosting
-```
-
-4. Build your project:
-```bash
-npm run build
-```
-
-5. Deploy:
-```bash
-firebase deploy
-```
 
 ## Want to Add More Content?
->>>>>>> 20d57e3 (Updated README)
 
 ### Creating New Lessons
 
